@@ -1,10 +1,9 @@
-// @import "../../styles/mixins.scss";
-
 .App-Content {
   background-color: var(--color-grey-400);
   padding: var(--space-squish-sm);
   box-shadow: var(--shadow-100);
   min-width: 290px;
+  margin: var(--space-top-md) 0;
   width: 100%;
   display: flex;
   justify-content: center;
