@@ -22,7 +22,10 @@ export default function FormInput(props) {
       <input
         onClick={handleActiveInput}
         onBlur={handleDeactivateInput}
+        onChange={props.actionChange}
         type={props.type}
+        name={props.name}
+        value={props.value}
         placeholder={props.placeholder}
       />
     </div>
@@ -30,6 +33,9 @@ export default function FormInput(props) {
 }
 
 FormInput.propTypes = {
+  name: PropTypes.string,
   type: PropTypes.string,
-  placeholder: PropTypes.string
+  value: PropTypes.string,
+  placeholder: PropTypes.string,
+  actionChange: PropTypes.func
 };

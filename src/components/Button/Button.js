@@ -5,14 +5,17 @@ import PropTypes from "prop-types";
 import "./Button.scss";
 
 export default function Button(props) {
+  const { action, type, label } = props;
+
   return (
-    <button onClick={props.action} className="App-Button">
-      {props.label}
+    <button type={type} onClick={action} className="App-Button">
+      {label}
     </button>
   );
 }
 
 Button.propTypes = {
   label: PropTypes.string,
+  type: PropTypes.string,
   action: PropTypes.func
 };

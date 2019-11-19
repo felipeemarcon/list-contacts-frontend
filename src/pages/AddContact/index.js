@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import api from "../../services/api";
 
 // Component
 import Content from "../../components/Content/Content";
@@ -8,21 +9,81 @@ import Form from "../../components/Form/Form";
 import Input from "../../components/Input/Input";
 
 export default function AddContact() {
+  const [contact, setContact] = useState({
+    name: "",
+    cel_phone: "",
+    email: "",
+    address: ""
+  });
+
+  const handleInputChange = event => {
+    const { name, value } = event.target;
+    setContact(prevState => ({ ...prevState, [name]: value }));
+  };
+
+  const { name, cel_phone, email, address } = contact;
+
+  const handleCleanInput = () => {
+    setContact(prevState => ({
+      ...prevState,
+      name: "",
+      cel_phone: "",
+      email: "",
+      address: ""
+    }));
+  };
+
   const handleSubmit = event => {
     event.preventDefault();
 
-    console.log("Send Form");
+    const { name, cel_phone, email, address } = contact;
+
+    api
+      .post("contact", {
+        name,
+        cel_phone,
+        email,
+        address
+      })
+      .then(handleCleanInput)
+      .catch(function(error) {
+        console.log(error);
+      });
   };
 
   return (
     <Content>
       <SectionTitle label="Add a new contact" />
       <Form action={handleSubmit}>
-        <Input type="text" placeholder="First name and Last name" />
-        <Input type="email" placeholder="Email address" />
-        <Input type="phone" placeholder="Phone number" />
-        <Input type="text" placeholder="Address" />
-        <Button label="Save contact" />
+        <Input
+          value={name}
+          name="name"
+          actionChange={handleInputChange}
+          type="text"
+          placeholder="First name and Last name"
+        />
+        <Input
+          value={email}
+          name="email"
+          actionChange={handleInputChange}
+          type="email"
+          placeholder="Email address"
+        />
+        <Input
+          value={cel_phone}
+          name="cel_phone"
+          actionChange={handleInputChange}
+          type="text"
+          placeholder="Phone number"
+        />
+        <Input
+          value={address}
+          name="address"
+          actionChange={handleInputChange}
+          type="text"
+          placeholder="Address"
+        />
+        <Button type="submit" label="Save contact" />
       </Form>
     </Content>
   );
