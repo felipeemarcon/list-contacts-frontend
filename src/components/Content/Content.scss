@@ -1,7 +1,16 @@
+// @import "../../styles/mixins.scss";
+
 .App-Content {
   background-color: var(--color-grey-400);
   padding: var(--space-squish-sm);
   box-shadow: var(--shadow-100);
-  min-width: 300px;
-  max-width: 100%;
+  min-width: 290px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 526px;
+  }
 }

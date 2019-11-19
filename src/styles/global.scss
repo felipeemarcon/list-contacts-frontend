@@ -22,13 +22,9 @@ body {
 
 a {
   color: var(--color-purple);
-  transition: 0.24s ease-in-out;
+  transition: var(--ui-transition);
 
   &:hover {
     color: var(--color-purple-100);
   }
-}
-
-button {
-  background-color: var(--color-purple);
 }

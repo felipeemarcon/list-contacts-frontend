@@ -1,0 +1,44 @@
+.App-Form {
+  &__inputGroup {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-purple);
+      transition: var(--ui-transition);
+    }
+
+    &--active {
+      &::after {
+        width: 100%;
+      }
+    }
+
+    input {
+      background: var(--color-grey-500);
+      padding: 16px;
+      border: none;
+      width: 100%;
+      font-size: var(--ui-font-size-sm);
+      line-height: 24px;
+      outline: none;
+      color: var(--color-grey-100);
+      transition: var(--ui-transition);
+
+      &::placeholder {
+        color: var(--color-grey-300);
+      }
+
+      &:focus {
+        background-color: var(--color-grey-600);
+      }
+    }
+  }
+}

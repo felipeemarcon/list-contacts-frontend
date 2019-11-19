@@ -12,14 +12,26 @@
   // Purple
   --color-purple-100: #cdbfff;
   --color-purple-200: #a58bff;
+  --color-purple-300: #9048ff;
   --color-purple: var(--color-purple-200);
 
   // Global
   --color-global-white: #ffffff;
   --color-global-black: #000000;
 
+  // -------- MEDIA-QUERIES -------- //
+  --phone-only: 599px;
+  --tablet-portrait-up: 768px;
+  --tablet-landscape-up: 1024px;
+  --desktop-up: 1200px;
+  --medium-desktop-up: 1440px;
+  --big-desktop-up: 1800px;
+
+  // -------- MEDIA-QUERIES -------- //
+
   // -------- SPACINGS -------- //
 
+  --space-squish-xxxsm: 14px 36px;
   --space-squish-sm: 34px 30px;
 
   // -------- SPACINGS -------- //
@@ -40,4 +52,11 @@
   --ui-font-size-sm: 16px;
   --ui-font-size-md: 20px;
   --ui-font-size-lg: 30px;
+  // -------- FONTS -------- //
+
+  // -------- TRANSITIONS -------- //
+
+  --ui-transition: 0.24s ease-in-out;
+
+  // -------- TRANSITIONS -------- //
 }

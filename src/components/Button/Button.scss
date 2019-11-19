@@ -1,0 +1,19 @@
+.App-Button {
+  border: none;
+  outline: none;
+  background-color: var(--color-purple);
+  font-family: var(--ui-font-family);
+  font-size: var(--ui-font-size-md);
+  line-height: calc(var(--ui-font-size-md) + 8px);
+  font-weight: 500;
+  color: var(--color-global-white);
+  padding: var(--space-squish-xxxsm);
+  margin-top: 20px;
+  cursor: pointer;
+  transition: var(--ui-transition);
+  width: 100%;
+
+  &:hover {
+    background-color: var(--color-purple-300);
+  }
+}
