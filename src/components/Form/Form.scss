@@ -1,0 +1,53 @@
+.App-Form {
+  input {
+    background: var(--color-grey-500);
+    padding: 16px;
+    border: none;
+    width: 100%;
+    font-size: var(--ui-font-size-sm);
+    line-height: 24px;
+    outline: none;
+    color: var(--color-grey-100);
+    transition: var(--ui-transition);
+
+    &::placeholder {
+      color: var(--color-grey-300);
+    }
+
+    &:focus {
+      background-color: var(--color-grey-600);
+    }
+  }
+
+  &__dropzone {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    min-height: 100px;
+    border: 2px dashed var(--color-grey-300);
+    padding: var(--space-md);
+    cursor: pointer;
+    outline: none;
+    transition: var(--ui-transition);
+
+    > p {
+      color: var(--color-grey-100);
+    }
+
+    > span {
+      margin-top: var(--space-xxxsm);
+      color: var(--color-grey-200);
+      font-size: var(--ui-font-size-xsm);
+      text-decoration: underline;
+    }
+
+    &:hover,
+    &:focus {
+      border-color: var(--color-purple);
+      background-color: var(--color-grey-500);
+    }
+  }
+}

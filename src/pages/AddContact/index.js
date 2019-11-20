@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import Dropzone from "../../components/Dropzone/Dropzone";
+
+// Api
 import api from "../../services/api";
 
 // Component
@@ -15,6 +18,8 @@ export default function AddContact() {
     email: "",
     address: ""
   });
+
+  const [avatar, setAvatar] = useState({ avatar: [] });
 
   const handleInputChange = event => {
     const { name, value } = event.target;
@@ -72,6 +77,7 @@ export default function AddContact() {
         <Input
           value={cel_phone}
           name="cel_phone"
+          mask="+55 (99) 99999-9999"
           actionChange={handleInputChange}
           type="text"
           placeholder="Phone number"
@@ -83,6 +89,7 @@ export default function AddContact() {
           type="text"
           placeholder="Address"
         />
+        <Dropzone />
         <Button type="submit" label="Save contact" />
       </Form>
     </Content>

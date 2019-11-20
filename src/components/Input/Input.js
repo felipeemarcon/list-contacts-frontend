@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 
+import InputMask from "react-input-mask";
+
 // Styles
 import "./Input.scss";
 
@@ -19,15 +21,27 @@ export default function FormInput(props) {
 
   return (
     <div className="App-Form__inputGroup">
-      <input
-        onClick={handleActiveInput}
-        onBlur={handleDeactivateInput}
-        onChange={props.actionChange}
-        type={props.type}
-        name={props.name}
-        value={props.value}
-        placeholder={props.placeholder}
-      />
+      {props.mask ? (
+        <InputMask
+          mask={props.mask}
+          value={props.value}
+          name={props.name}
+          onFocus={handleActiveInput}
+          onBlur={handleDeactivateInput}
+          onChange={props.actionChange}
+          placeholder={props.placeholder}
+        />
+      ) : (
+        <input
+          onFocus={handleActiveInput}
+          onBlur={handleDeactivateInput}
+          onChange={props.actionChange}
+          type={props.type}
+          name={props.name}
+          value={props.value}
+          placeholder={props.placeholder}
+        />
+      )}
     </div>
   );
 }
@@ -35,6 +49,7 @@ export default function FormInput(props) {
 FormInput.propTypes = {
   name: PropTypes.string,
   type: PropTypes.string,
+  mask: PropTypes.string,
   value: PropTypes.string,
   placeholder: PropTypes.string,
   actionChange: PropTypes.func

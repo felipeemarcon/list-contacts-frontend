@@ -13,7 +13,8 @@
   transition: var(--ui-transition);
   width: 100%;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var(--color-purple-300);
   }
 }
