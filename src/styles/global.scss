@@ -2,13 +2,65 @@
 @import "fonts";
 @import "variables";
 
+$bodyBg: "bodyBg";
+$card-bg: "card-bg";
+$text: "text";
+$text-secondary: "text-secondary";
+$link: "link";
+$hover: "hover";
+$logo: "logo";
+$brand-blue: "brand-blue";
+$brand-red: "brand-red";
+$border: "border";
+
+$themes: (
+  default: (
+    bodyBg: #ffffff,
+    text: #202020
+  ),
+  dark: (
+    bodyBg: #202020,
+    text: #f4f4f4
+  )
+);
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), "#{$key}");
+        $theme-map: map-merge(
+          $theme-map,
+          (
+            $key: $value
+          )
+        ) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
 html,
-body {
+body,
+#root,
+.App {
   width: 100%;
   height: 100%;
 }
 
-body {
+#root > div {
+  height: 100%;
+}
+
+body,
+.App {
   margin: 0;
   background-color: var(--color-grey-500);
   font-family: var(--ui-font-family);
@@ -27,4 +79,14 @@ a {
   &:hover {
     color: var(--color-purple-100);
   }
+}
+
+.App {
+  flex-direction: column;
+
+  @include themed() {
+    background: t($bodyBg);
+  }
+
+  transition: 0.2s;
 }

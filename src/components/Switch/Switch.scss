@@ -1,0 +1,51 @@
+.App-Switch {
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  position: relative;
+  overflow: hidden;
+
+  &__slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    background-color: #d3d3d3;
+    border: 1px solid #a6a6a6;
+    border-radius: 32px;
+    transition: 0.2s ease-out;
+
+    &::before {
+      content: "";
+      background-color: #ffffff;
+      box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.21);
+      position: absolute;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: 0.2s ease-out;
+    }
+  }
+
+  > input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+
+    &:checked + .App-Switch__slider {
+      background-color: #121212;
+      border-color: #313131;
+      transition: 0.2s ease-in;
+
+      &::before {
+        background-color: #fff;
+        transform: translateX(26px);
+        transition: 0.2s ease-in;
+      }
+    }
+  }
+}
