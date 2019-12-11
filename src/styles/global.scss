@@ -2,51 +2,6 @@
 @import "fonts";
 @import "variables";
 
-$bodyBg: "bodyBg";
-$card-bg: "card-bg";
-$text: "text";
-$text-secondary: "text-secondary";
-$link: "link";
-$hover: "hover";
-$logo: "logo";
-$brand-blue: "brand-blue";
-$brand-red: "brand-red";
-$border: "border";
-
-$themes: (
-  default: (
-    bodyBg: #ffffff,
-    text: #202020
-  ),
-  dark: (
-    bodyBg: #202020,
-    text: #f4f4f4
-  )
-);
-
-@mixin themed() {
-  @each $theme, $map in $themes {
-    .theme--#{$theme} & {
-      $theme-map: () !global;
-      @each $key, $submap in $map {
-        $value: map-get(map-get($themes, $theme), "#{$key}");
-        $theme-map: map-merge(
-          $theme-map,
-          (
-            $key: $value
-          )
-        ) !global;
-      }
-      @content;
-      $theme-map: null !global;
-    }
-  }
-}
-
-@function t($key) {
-  @return map-get($theme-map, $key);
-}
-
 html,
 body,
 #root,
@@ -62,9 +17,9 @@ body,
 body,
 .App {
   margin: 0;
-  background-color: var(--color-grey-500);
+  background-color: var(--app-background);
   font-family: var(--ui-font-family);
-  color: var(--color-grey);
+  color: var(--text-body-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -73,7 +28,7 @@ body,
 }
 
 a {
-  color: var(--color-purple);
+  color: var(--text-purple);
   transition: var(--ui-transition);
 
   &:hover {
@@ -83,10 +38,5 @@ a {
 
 .App {
   flex-direction: column;
-
-  @include themed() {
-    background: t($bodyBg);
-  }
-
-  transition: 0.2s;
+  transition: var(--ui-transition);
 }

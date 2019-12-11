@@ -1,13 +1,13 @@
 .App-Form {
   input {
-    background: var(--color-grey-500);
+    background: var(--input-background);
     padding: 16px;
     border: none;
     width: 100%;
     font-size: var(--ui-font-size-sm);
     line-height: 24px;
     outline: none;
-    color: var(--color-grey-100);
+    color: var(--input-text);
     transition: var(--ui-transition);
 
     &::placeholder {
@@ -15,7 +15,7 @@
     }
 
     &:focus {
-      background-color: var(--color-grey-600);
+      background-color: var(--input-active-background);
     }
   }
 

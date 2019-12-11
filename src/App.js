@@ -17,21 +17,28 @@ class App extends Component {
     this.changeTheme = this.changeTheme.bind(this);
   }
 
+  componentDidMount() {
+    this.setInitialTheme();
+  }
+
+  setInitialTheme() {
+    const htmlEl = document.documentElement;
+    htmlEl.setAttribute("data-theme", "light");
+  }
+
   changeTheme() {
-    this.setState({ dark: !this.state.dark });
+    const htmlEl = document.documentElement;
+
+    this.setState({ dark: !this.state.dark }, () => {
+      htmlEl.setAttribute("data-theme", this.state.dark ? "dark" : "light");
+    });
   }
 
   render() {
     return (
-      <div
-        className={`theme ${
-          this.state.dark ? "theme--dark" : "theme--default"
-        }`}
-      >
-        <div className="App">
-          <Switch theme={this.changeTheme} />
-          <Routes />
-        </div>
+      <div className="App">
+        <Switch theme={this.changeTheme} />
+        <Routes />
       </div>
     );
   }

@@ -66,3 +66,28 @@
 
   // -------- TRANSITIONS -------- //
 }
+[data-theme="light"] {
+  --app-background: var(--color-global-white);
+  --text-body-color: var(--color-grey-400);
+  --content-background: var(--color-global-white);
+  --content-border: var(--color-grey-100);
+  --content-shadow: var(--shadow-purple-100);
+  --button-default: var(--color-purple-300);
+  --text-purple: var(--color-purple-300);
+  --input-background: var(--color-grey-100);
+  --input-active-background: var(--color-grey-200);
+  --input-text: var(--color-grey-600);
+}
+
+[data-theme="dark"] {
+  --app-background: var(--color-grey-500);
+  --text-body-color: var(--color-grey);
+  --content-background: var(--color-grey-400);
+  --content-border: var(--color-grey-500);
+  --content-shadow: var(--shadow-100);
+  --button-default: var(--color-purple-200);
+  --text-purple: var(--color-purple-200);
+  --input-background: var(--color-grey-500);
+  --input-active-background: var(--color-grey-600);
+  --input-text: var(--color-grey-100);
+}
