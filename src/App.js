@@ -4,7 +4,9 @@ import React, { Component } from "react";
 import Routes from "./routes";
 
 // Components
-import Switch from "./components/Switch/Switch";
+import Content from "./components/Content/Content";
+import Card from "./components/Card/Card";
+import SwitchTheme from "./components/SwitchTheme/SwitchTheme";
 
 class App extends Component {
   constructor(props) {
@@ -14,7 +16,7 @@ class App extends Component {
       dark: false
     };
 
-    this.changeTheme = this.changeTheme.bind(this);
+    this.setTheme = this.setTheme.bind(this);
   }
 
   componentDidMount() {
@@ -26,7 +28,7 @@ class App extends Component {
     htmlEl.setAttribute("data-theme", "light");
   }
 
-  changeTheme() {
+  setTheme() {
     const htmlEl = document.documentElement;
 
     this.setState({ dark: !this.state.dark }, () => {
@@ -37,8 +39,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Switch theme={this.changeTheme} />
-        <Routes />
+        <Content>
+          <Card padding="10px">
+            <div>
+              <a href="#">Voltar</a>
+              <SwitchTheme theme={this.setTheme} />
+            </div>
+          </Card>
+          <Routes />
+        </Content>
       </div>
     );
   }

@@ -1,12 +1,13 @@
 .App-Switch {
   display: inline-block;
-  width: 60px;
+  width: 66px;
   height: 34px;
   position: relative;
   overflow: hidden;
 
   &__slider {
     position: absolute;
+    z-index: 1;
     top: 0;
     left: 0;
     right: 0;
@@ -43,7 +44,7 @@
 
       &::before {
         background-color: #fff;
-        transform: translateX(26px);
+        transform: translateX(32px);
         transition: 0.2s ease-in;
       }
     }

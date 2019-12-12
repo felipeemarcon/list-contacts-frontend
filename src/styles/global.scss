@@ -29,9 +29,9 @@ body,
 
 a {
   color: var(--text-purple);
-  transition: var(--ui-transition);
 
   &:hover {
+    transition: var(--ui-transition);
     color: var(--color-purple-100);
   }
 }
