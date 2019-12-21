@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 
-import { MdDelete } from "react-icons/md";
+import { MdDelete, MdCameraAlt } from "react-icons/md";
 
 // Api
 import api from "../../services/api";
@@ -14,7 +14,6 @@ import Form from "../../components/Form/Form";
 import Input from "../../components/Input/Input";
 
 import "./style.scss";
-import camera from "../../assets/svg/camera.svg";
 
 export default function AddContact() {
   const [contact, setContact] = useState({
@@ -72,13 +71,14 @@ export default function AddContact() {
         <Form action={handleSubmit}>
           <div className="Form-thumbnailContainer">
             <label
+              tabIndex="0"
               id="thumbnail"
               className={`Form-thumbnail ${
                 preview ? "Form-thumbnail--has-thumbnail" : ""
               }`}
               style={{ backgroundImage: `url(${preview})` }}
             >
-              <img src={camera} alt="" />
+              <MdCameraAlt size={32} color="var(--color-grey-200)" />
               <span>Click here to select a contact photo.</span>
               <input
                 type="file"
