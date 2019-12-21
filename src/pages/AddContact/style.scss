@@ -1,6 +1,7 @@
 .Form-thumbnailContainer {
   position: relative;
   overflow: hidden;
+  margin-top: var(--space-sm);
 
   &:hover {
     .Form-thumbnail__delete {
@@ -16,7 +17,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin-top: 20px;
   height: 140px;
   cursor: pointer;
   background-size: cover;
@@ -32,13 +32,16 @@
     border-color: var(--color-green-100);
 
     > span,
-    img {
+    svg {
       display: none;
     }
   }
 
   input {
-    display: none;
+    opacity: 0;
+    width: 0;
+    padding: 0;
+    height: 0;
   }
 
   &__delete {
@@ -70,7 +73,9 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:active,
+  &:focus {
     background-color: var(--input-background);
     border-color: var(--color-purple-300);
   }
