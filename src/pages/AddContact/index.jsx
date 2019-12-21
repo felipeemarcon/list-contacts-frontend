@@ -71,7 +71,7 @@ export default function AddContact() {
         <Form action={handleSubmit}>
           <div className="Form-thumbnailContainer">
             <label
-              tabIndex="0"
+              htmlFor="selectAvatar"
               id="thumbnail"
               className={`Form-thumbnail ${
                 preview ? "Form-thumbnail--has-thumbnail" : ""
@@ -82,6 +82,8 @@ export default function AddContact() {
               <span>Click here to select a contact photo.</span>
               <input
                 type="file"
+                name="file"
+                id="selectAvatar"
                 onChange={event => setAvatar(event.target.files[0])}
               />
             </label>
