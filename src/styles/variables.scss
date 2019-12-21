@@ -12,21 +12,43 @@
   // Purple
   --color-purple-100: #cdbfff;
   --color-purple-200: #a58bff;
+  --color-purple-300: #9048ff;
   --color-purple: var(--color-purple-200);
+
+  // Actions
+  --color-green-100: #31c881;
+  --color-red-100: #ff3737;
 
   // Global
   --color-global-white: #ffffff;
   --color-global-black: #000000;
 
+  // -------- MEDIA-QUERIES -------- //
+  --phone-only: 599px;
+  --tablet-portrait-up: 768px;
+  --tablet-landscape-up: 1024px;
+  --desktop-up: 1200px;
+  --medium-desktop-up: 1440px;
+  --big-desktop-up: 1800px;
+
+  // -------- MEDIA-QUERIES -------- //
+
   // -------- SPACINGS -------- //
 
+  --space-squish-xxxsm: 12px 36px;
   --space-squish-sm: 34px 30px;
+  --space-xxxsm: 4px;
+  --space-xxsm: 8px;
+  --space-xsm: 16px;
+  --space-sm: 20px;
+  --space-md: 34px;
 
   // -------- SPACINGS -------- //
 
   // -------- SHADOWS -------- //
 
   --shadow-100: 0 4px 20px 0 rgba(0, 0, 0, 0.1);
+  --shadow-purple-100: 0 4px 20px 0 rgba(165, 139, 255, 0.2);
 
   // -------- SHADOWS -------- //
 
@@ -40,4 +62,38 @@
   --ui-font-size-sm: 16px;
   --ui-font-size-md: 20px;
   --ui-font-size-lg: 30px;
+  // -------- FONTS -------- //
+
+  // -------- TRANSITIONS -------- //
+
+  --ui-transition: 0.24s ease-in-out;
+
+  // -------- TRANSITIONS -------- //
+}
+[data-theme="light"] {
+  --app-background: var(--color-global-white);
+  --text-body-color: var(--color-grey-400);
+  --content-background: var(--color-global-white);
+  --content-border: var(--color-grey-100);
+  --content-shadow: var(--shadow-purple-100);
+  --button-default: var(--color-purple-300);
+  --text-purple: var(--color-purple-300);
+  --input-background: var(--color-grey-100);
+  --input-active-background: var(--color-grey-200);
+  --input-border-color: var(--color-grey-200);
+  --input-text: var(--color-grey-600);
+}
+
+[data-theme="dark"] {
+  --app-background: var(--color-grey-500);
+  --text-body-color: var(--color-grey);
+  --content-background: var(--color-grey-400);
+  --content-border: var(--color-grey-500);
+  --content-shadow: var(--shadow-100);
+  --button-default: var(--color-purple-200);
+  --text-purple: var(--color-purple-200);
+  --input-background: var(--color-grey-500);
+  --input-active-background: var(--color-grey-600);
+  --input-border-color: var(--color-grey-500);
+  --input-text: var(--color-grey-100);
 }

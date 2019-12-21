@@ -1,0 +1,77 @@
+.Form-thumbnailContainer {
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    .Form-thumbnail__delete {
+      transform: translateX(-50%) translateY(-20%);
+    }
+  }
+}
+
+.Form-thumbnail {
+  border: 2px dashed var(--input-border-color);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 140px;
+  cursor: pointer;
+  background-size: cover;
+  background-position: top center;
+  transition: var(--ui-transition);
+
+  > span {
+    margin-top: var(--space-xsm);
+    text-align: center;
+  }
+
+  &--has-thumbnail {
+    border-color: var(--color-green-100);
+
+    > span,
+    img {
+      display: none;
+    }
+  }
+
+  input {
+    display: none;
+  }
+
+  &__delete {
+    cursor: pointer;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(100%);
+    transition: var(--ui-transition);
+
+    svg path {
+      transition: var(--ui-transition);
+    }
+
+    &:hover {
+      background-color: var(--color-red-100);
+
+      svg path {
+        fill: var(--color-global-white);
+      }
+    }
+  }
+
+  &:hover {
+    background-color: var(--input-background);
+    border-color: var(--color-purple-300);
+  }
+}

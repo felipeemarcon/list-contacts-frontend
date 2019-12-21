@@ -1,0 +1,18 @@
+.App-Card {
+  background-color: var(--content-background);
+  border: 1px solid var(--content-border);
+  box-shadow: var(--content-shadow);
+  padding: var(--space-squish-sm);
+  min-width: 290px;
+  margin: var(--space-xxsm) 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  transition: var(--ui-transition);
+
+  > div {
+    display: flex;
+    align-items: center;
+  }
+}
