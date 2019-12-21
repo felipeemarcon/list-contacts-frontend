@@ -12,11 +12,13 @@ class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      dark: false
-    };
-
+    this.storagedTheme = localStorage.getItem("@lmc/theme");
+    this.chekeTheme = this.storagedTheme ? this.storagedTheme : "light";
     this.setTheme = this.setTheme.bind(this);
+
+    this.state = {
+      currentTheme: this.chekeTheme
+    };
   }
 
   componentDidMount() {
@@ -25,15 +27,22 @@ class App extends Component {
 
   setInitialTheme() {
     const htmlEl = document.documentElement;
-    htmlEl.setAttribute("data-theme", "light");
+
+    htmlEl.setAttribute("data-theme", this.chekeTheme);
+
+    return this.chekeTheme;
   }
 
   setTheme() {
     const htmlEl = document.documentElement;
 
-    this.setState({ dark: !this.state.dark }, () => {
-      htmlEl.setAttribute("data-theme", this.state.dark ? "dark" : "light");
-    });
+    this.setState(
+      { currentTheme: this.state.currentTheme === "light" ? "dark" : "light" },
+      () => {
+        htmlEl.setAttribute("data-theme", this.state.currentTheme);
+        localStorage.setItem("@lmc/theme", this.state.currentTheme);
+      }
+    );
   }
 
   render() {
@@ -43,7 +52,10 @@ class App extends Component {
           <Card padding="10px">
             <div>
               <a href="#">Voltar</a>
-              <SwitchTheme theme={this.setTheme} />
+              <SwitchTheme
+                theme={this.setTheme}
+                initialTheme={this.setInitialTheme()}
+              />
             </div>
           </Card>
           <Routes />
