@@ -4,9 +4,10 @@ import "./Switch.scss";
 
 export default function Switch(props) {
   return (
-    <label className="App-Switch">
+    <label htmlFor="switchInput" className="App-Switch">
       <input
         type="checkbox"
+        id="switchInput"
         defaultChecked={props.isChecked === "dark"}
         onChange={props.theme}
       />
