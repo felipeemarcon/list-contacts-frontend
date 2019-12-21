@@ -15,6 +15,10 @@
   --color-purple-300: #9048ff;
   --color-purple: var(--color-purple-200);
 
+  // Actions
+  --color-green-100: #31c881;
+  --color-red-100: #ff3737;
+
   // Global
   --color-global-white: #ffffff;
   --color-global-black: #000000;
@@ -76,6 +80,7 @@
   --text-purple: var(--color-purple-300);
   --input-background: var(--color-grey-100);
   --input-active-background: var(--color-grey-200);
+  --input-border-color: var(--color-grey-200);
   --input-text: var(--color-grey-600);
 }
 
@@ -89,5 +94,6 @@
   --text-purple: var(--color-purple-200);
   --input-background: var(--color-grey-500);
   --input-active-background: var(--color-grey-600);
+  --input-border-color: var(--color-grey-500);
   --input-text: var(--color-grey-100);
 }
