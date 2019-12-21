@@ -18,7 +18,7 @@ import "./style.scss";
 export default function AddContact() {
   const [contact, setContact] = useState({
     name: "",
-    cel_phone: "",
+    phone: "",
     email: "",
     address: ""
   });
@@ -34,7 +34,7 @@ export default function AddContact() {
     setContact(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const { name, cel_phone, email, address } = contact;
+  const { name, phone: cel_phone, email, address } = contact;
 
   const handleCleanInput = () => {
     setContact(prevState => ({
@@ -65,7 +65,7 @@ export default function AddContact() {
   };
 
   return (
-    <Content>
+    <Content margin="0">
       <Card padding="var(--space-squish-sm)">
         <SectionTitle label="Add a new contact" />
         <Form action={handleSubmit}>

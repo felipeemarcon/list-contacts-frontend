@@ -2,6 +2,7 @@ import React, { Component } from "react";
 
 // Routes
 import Routes from "./routes";
+import history from "./utils/history";
 
 // Components
 import Content from "./components/Content/Content";
@@ -17,12 +18,22 @@ class App extends Component {
     this.setTheme = this.setTheme.bind(this);
 
     this.state = {
-      currentTheme: this.chekeTheme
+      currentTheme: this.chekeTheme,
+      prevPath: ""
     };
   }
 
   componentDidMount() {
     this.setInitialTheme();
+  }
+
+  componentDidUpdate(nextProps) {
+    console.log(this.props.location);
+    if (nextProps.location !== this.props.location) {
+      this.setState({ prevPath: this.props.location }, () =>
+        console.log(this.state.prevPath)
+      );
+    }
   }
 
   setInitialTheme() {
@@ -45,13 +56,21 @@ class App extends Component {
     );
   }
 
+  handleGoBackRoute(event) {
+    event.preventDefault();
+
+    history.goBack();
+  }
+
   render() {
     return (
       <div className="App">
         <Content>
           <Card padding="10px">
             <div>
-              <a href="#">Voltar</a>
+              <a href="#" onClick={this.handleGoBackRoute}>
+                Voltar
+              </a>
               <SwitchTheme
                 theme={this.setTheme}
                 initialTheme={this.setInitialTheme()}
