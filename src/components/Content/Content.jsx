@@ -4,5 +4,15 @@ import React from "react";
 import "./Content.scss";
 
 export default function Content(props) {
-  return <div className="App-Content">{props.children}</div>;
+  const { children, margin } = props;
+
+  const STYLE = {
+    margin
+  };
+
+  return (
+    <div className="App-Content" style={STYLE}>
+      {children}
+    </div>
+  );
 }

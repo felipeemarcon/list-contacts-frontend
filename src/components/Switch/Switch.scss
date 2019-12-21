@@ -36,6 +36,7 @@
     width: 0;
     height: 0;
     opacity: 0;
+    margin: 0;
 
     &:checked + .App-Switch__slider {
       background-color: #121212;
