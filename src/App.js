@@ -68,9 +68,12 @@ class App extends Component {
         <Content>
           <Card padding="10px">
             <div>
-              <a href="#" onClick={this.handleGoBackRoute}>
+              <span
+                className="App-GoBackRoute"
+                onClick={this.handleGoBackRoute}
+              >
                 Voltar
-              </a>
+              </span>
               <SwitchTheme
                 theme={this.setTheme}
                 initialTheme={this.setInitialTheme()}

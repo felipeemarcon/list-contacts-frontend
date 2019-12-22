@@ -18,6 +18,7 @@
   // Actions
   --color-green-100: #31c881;
   --color-red-100: #ff3737;
+  --color-warning-100: #ffb837;
 
   // Global
   --color-global-white: #ffffff;
@@ -62,6 +63,10 @@
   --ui-font-size-sm: 16px;
   --ui-font-size-md: 20px;
   --ui-font-size-lg: 30px;
+
+  --ui-font-weight-rg: 400;
+  --ui-font-weight-md: 500;
+  --ui-font-weight-bd: 700;
   // -------- FONTS -------- //
 
   // -------- TRANSITIONS -------- //
@@ -96,4 +101,6 @@
   --input-active-background: var(--color-grey-600);
   --input-border-color: var(--color-grey-500);
   --input-text: var(--color-grey-100);
+  --contact-title-color: var(--color-global-white);
+  --contact-text-color: var(--color-grey-100);
 }

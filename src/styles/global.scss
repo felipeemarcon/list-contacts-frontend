@@ -29,9 +29,9 @@ body,
 
 a {
   color: var(--text-purple);
+  transition: var(--ui-transition);
 
   &:hover {
-    transition: var(--ui-transition);
     color: var(--color-purple-100);
   }
 }
@@ -39,4 +39,14 @@ a {
 .App {
   flex-direction: column;
   transition: var(--ui-transition);
+
+  &-GoBackRoute {
+    color: var(--text-purple);
+    cursor: pointer;
+    transition: var(--ui-transition);
+
+    &:hover {
+      color: var(--color-purple-100);
+    }
+  }
 }

@@ -1,0 +1,52 @@
+.ListContacts {
+  ul {
+    background-color: var(--content-background);
+    border: var(--content-border);
+    box-shadow: var(--content-shadow);
+
+    li {
+      display: grid;
+      grid-template-columns: 106px 1fr 48px;
+      grid-template-rows: 106px;
+      grid-column-gap: var(--space-xsm);
+      padding: var(--space-md);
+      align-items: center;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--content-border);
+      }
+    }
+  }
+
+  &__avatar {
+    background-color: var(--app-background);
+    width: 100%;
+    height: 100%;
+  }
+
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-evenly;
+
+    h2 {
+      font-size: var(--ui-font-size-md);
+      font-weight: 500;
+      color: var(--contact-title-color);
+    }
+
+    p {
+      color: var(--contact-text-color);
+    }
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+
+    > span {
+      cursor: pointer;
+    }
+  }
+}
