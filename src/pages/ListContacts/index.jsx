@@ -23,11 +23,27 @@ function ListContacts(props) {
     }
   };
 
+  const handleDelete = async id => {
+    await api.delete(`/contact/${id}`);
+
+    try {
+      loadContacts();
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   return (
     <div className="ListContacts">
       <ul>
         {contacts.map((contact, index) => {
-          return <ContactCard key={index} contact={contact} />;
+          return (
+            <ContactCard
+              key={index}
+              contact={contact}
+              deleteAction={handleDelete}
+            />
+          );
         })}
       </ul>
     </div>

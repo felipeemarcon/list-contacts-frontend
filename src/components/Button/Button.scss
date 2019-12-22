@@ -17,4 +17,24 @@
   &:focus {
     background-color: var(--color-purple-300);
   }
+
+  &--cancel {
+    background-color: var(--button-cancel-bg);
+
+    &:hover {
+      background-color: lighten(grey, 5%);
+    }
+  }
+
+  &--danger {
+    background-color: var(--color-red-100);
+
+    &:hover {
+      background-color: darken(red, 15%);
+    }
+  }
+
+  &--small {
+    font-size: var(--ui-font-size-sm);
+  }
 }

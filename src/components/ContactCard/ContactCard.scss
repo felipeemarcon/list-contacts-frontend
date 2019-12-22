@@ -11,6 +11,7 @@
       grid-column-gap: var(--space-xsm);
       padding: var(--space-md);
       align-items: center;
+      position: relative;
 
       &:not(:last-child) {
         border-bottom: 1px solid var(--content-border);
@@ -47,6 +48,38 @@
 
     > span {
       cursor: pointer;
+    }
+  }
+
+  &__delete {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--contact-delete-content-bg);
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    padding: var(--space-md);
+
+    p {
+      color: var(--text-body-color-secondary);
+      text-align: center;
+      font-size: var(--ui-font-size-sm);
+    }
+
+    > div {
+      display: flex;
+      justify-content: space-evenly;
+
+      button {
+        &:not(last-child) {
+          margin-right: var(--space-xxxsm);
+        }
+        &:not(first-child) {
+          margin-left: var(--space-xxxsm);
+        }
+      }
     }
   }
 }

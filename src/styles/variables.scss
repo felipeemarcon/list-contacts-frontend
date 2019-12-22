@@ -24,6 +24,10 @@
   --color-global-white: #ffffff;
   --color-global-black: #000000;
 
+  // -------- OPACITIES -------- //
+  --color-black-80: rgba(0, 0, 0, 0.8);
+  // -------- OPACITIES -------- //
+
   // -------- MEDIA-QUERIES -------- //
   --phone-only: 599px;
   --tablet-portrait-up: 768px;
@@ -92,6 +96,7 @@
 [data-theme="dark"] {
   --app-background: var(--color-grey-500);
   --text-body-color: var(--color-grey);
+  --text-body-color-secondary: var(--color-global-white);
   --content-background: var(--color-grey-400);
   --content-border: var(--color-grey-500);
   --content-shadow: var(--shadow-100);
@@ -103,4 +108,6 @@
   --input-text: var(--color-grey-100);
   --contact-title-color: var(--color-global-white);
   --contact-text-color: var(--color-grey-100);
+  --contact-delete-content-bg: var(--color-black-80);
+  --button-cancel-bg: var(--color-grey-400);
 }

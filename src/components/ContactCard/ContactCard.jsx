@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { MdDelete, MdEdit } from "react-icons/md";
+
+// Components
+import Button from "../Button/Button";
 
 import "./ContactCard.scss";
 
 function ContactCard(props) {
-  const { contact } = props;
-  const { name, email, cel_phone: phone } = contact;
+  const { contact, deleteAction } = props;
+  const { _id: id, name, email, cel_phone: phone } = contact;
+
+  const [deleteContact, setDeleteContact] = useState(false);
+
+  const handleCancel = () => {
+    setDeleteContact(false);
+  };
 
   return (
     <li>
@@ -17,13 +26,28 @@ function ContactCard(props) {
         <p>{phone}</p>
       </div>
       <div className="ListContacts__actions">
-        <span>
+        <span onClick={() => deleteAction(id)}>
           <MdDelete size={20} color="var(--color-red-100)" />
         </span>
         <span>
           <MdEdit size={20} color="var(--color-warning-100)" />
         </span>
       </div>
+
+      {deleteContact && (
+        <div className="ListContacts__delete">
+          <p>Are you sure that yout want to delete this contact?</p>
+          <div>
+            <Button
+              action={() => handleCancel()}
+              label="Cancel"
+              buttonStyle="cancel"
+              size="small"
+            />
+            <Button label="Delete" buttonStyle="danger" size="small" />
+          </div>
+        </div>
+      )}
     </li>
   );
 }
